@@ -46,20 +46,14 @@ interface CompactText extends CompactNode {
 
 typedef (NodeInflationRequest or CompactNode) NodeInflationInfo;
 
-[Constructor(CompactNode node, optional NodeInflationInit init),
+[Constructor(CompactNode node),
  Exposed=Window]
 interface NodeInflationRequest {
   readonly attribute CompactNode node;
-read
-  readonly unsigned long priority;
-  void cancel();
-};
-
-dictionary NodeInflationInit {
-  unsigned long priority = 0;
+  void cancel(); // Cancelable promises?
 };
 
 partial interface Node {
-  static Promise<Node> inflate(NodeInflationInfo target, optional NodeInflationInit init);
+  static Promise<Node> inflate(NodeInflationInfo target);
 };
 ```
