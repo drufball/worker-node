@@ -11,7 +11,7 @@ This proposal uses JS objects to represent DOM, which incurs some overhead from 
 ## API
 __Note: This API is very much a rough draft / strawman. Suggestions for improvement welcome.__
 
-```
+```idl
 [Exposed=(Window,Worker)]
 interface CompactNode { };
 
